@@ -3,39 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clock</title>
+    <title>World Clock - Predefined and Preferred Time Zones</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>World Clock</h1>
-        <div class="clock" id="local-clock">
-            <h2>Local Time</h2>
-            <div class="time" id="local-time">00:00:00</div>
-            <div class="date" id="local-date">January 1, 2023</div>
+        <h1>World Clock - Predefined and Preferred Time Zones</h1>
+
+        <!-- World Clock Section -->
+        <div class="section">
+            <h2>World Clock</h2>
+            <div class="clocks" id="world-clocks">
+                <!-- Predefined clocks will be dynamically added here -->
+            </div>
+
+            <!-- Add Time Zone Tile -->
+            <div class="clock add-time-zone">
+                <h3>Add Time Zone</h3>
+                <select id="country-select">
+                    <option value="" disabled selected>Select Country</option>
+                    <!-- Countries will be dynamically populated -->
+                </select>
+                <select id="timezone-select">
+                    <option value="" disabled selected>Select Time Zone</option>
+                    <!-- Time zones will be dynamically populated -->
+                </select>
+                <input type="text" id="custom-name" placeholder="Custom Name (e.g., My Time)">
+                <button id="add-timezone">Add</button>
+            </div>
         </div>
-        <div class="clock" id="utc-clock">
-            <h2>UTC Time</h2>
-            <div class="time" id="utc-time">00:00:00</div>
-            <div class="date" id="utc-date">January 1, 2023</div>
+
+        <!-- Stopwatch Section -->
+        <div class="section">
+            <h2>Stopwatch</h2>
+            <div id="stopwatch">00:00:00</div>
+            <button id="start-stopwatch">Start</button>
+            <button id="reset-stopwatch">Reset</button>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="section">
+            <h2>Timer</h2>
+            <input type="number" id="timer-input" placeholder="Enter seconds" min="1">
+            <div id="timer-display">00:00:00</div>
+            <button id="start-timer">Start</button>
+            <button id="reset-timer">Reset</button>
+        </div>
+
+        <!-- Countdown Section -->
+        <div class="section">
+            <h2>Countdown</h2>
+            <input type="datetime-local" id="countdown-input">
+            <div id="countdown-display">00:00:00</div>
+            <button id="start-countdown">Start</button>
+            <button id="reset-countdown">Reset</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-<div class="clock" id="new-york-clock">
-    <h2>New York Time</h2>
-    <div class="time" id="new-york-time">00:00:00</div>
-    <div class="date" id="new-york-date">January 1, 2023</div>
-</div>
-<div class="clock" id="london-clock">
-    <h2>London Time</h2>
-    <div class="time" id="london-time">00:00:00</div>
-    <div class="date" id="london-date">January 1, 2023</div>
-</div>
-<div class="clock" id="tokyo-clock">
-    <h2>Tokyo Time</h2>
-    <div class="time" id="tokyo-time">00:00:00</div>
-    <div class="date" id="tokyo-date">January 1, 2023</div>
-</div>
